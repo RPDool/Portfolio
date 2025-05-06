@@ -1,41 +1,77 @@
-import logo from './banner.png';
 import './App.css';
 
 function App() {
+  const projects = [
+    {
+      id: 1,
+      title: "Project Title 1",
+      description: "A brief description of what this project does. Highlight any cool tech or challenges you solved."
+    },
+    {
+      id: 2,
+      title: "Project Title 2",
+      description: "Another project with a cool feature or tech stack explained.",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container">
+      {/* Left Sidebar */}
+      <aside className="sidebar">
+        <div className="sidebar-content">
+          <h1 className="name">Robin Dool</h1>
+          <h2 className="title">Front end developer</h2>
+          <p className="subtitle">
+            I build accessible, pixel-perfect digital experiences for the web.
+          </p>
 
-        <nav className="App-nav">
-          <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+          <nav className="nav-links">
+            <a href="#about">About me</a>
+            <a href="#projects">Projects</a>
+          </nav>
 
-        <h1>My Portfolio</h1>
-      </header>
+          <a href="mailto:robindool07@gmail.com" className="email">
+            robindool07@gmail.com
+          </a>
 
-      {/* Your content sections */}
-      <section id="about">
-        <h2>About Me</h2>
-        <div>
-          <p>Hello</p>
-          <p>I'm a software developer with a passion for creating web applications.</p>
+          <div className="social-icons">
+            <a href="#"><i className="fab fa-github"></i></a>
+            <a href="#"><i className="fab fa-linkedin"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
+          </div>
         </div>
-      </section>
+      </aside>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        {/* Content for projects section */}
-      </section>
+      {/* Right Scrollable Content */}
+      <main className="content">
+        <section id="about">
+          <h2>About Me</h2>
+          <p>
+            I'm Robin Dool, a front-end developer passionate about creating engaging,
+            accessible, and pixel-perfect digital experiences. With a strong eye for design
+            and performance, I specialize in building modern interfaces using HTML, CSS,
+            JavaScript, and React.
+          </p>
+        </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        {/* Content for contact section */}
-      </section>
+        <section id="projects">
+          <h2>Projects</h2>
+          <div className="project-list">
+            {projects.map((project) => (
+              <div className="project" key={project.id}>
+                <div className="project-img">IMG</div>
+                <div>
+                  <h3 className="project-title">{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <div className="resume-link">
+          <a href="#">Resume →</a>
+        </div>
+      </main>
     </div>
   );
 }
