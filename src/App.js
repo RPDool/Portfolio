@@ -38,9 +38,15 @@
             <a href='https://robsnor.itch.io/' className="email" >robsnor.itch.io </a>
 
             <div className="social-icons">
-              <a href="#"><i className="fab fa-github"></i></a>
-              <a href="#"><i className="fab fa-linkedin"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </aside>
@@ -50,7 +56,7 @@
           <section id="about">
             <h2>About Me</h2>
             <p>
-              I'm Robin Dool, a front-end/game developer passionate about creating engaging,
+              I'm Robin Dool, a web/game developer passionate about creating engaging,
               accessible, and pixel-perfect digital experiences. With a strong eye for design
               and performance, I specialize in building modern interfaces using HTML, CSS,
               JavaScript, and React. With game development i specialize in Unity and C#.
