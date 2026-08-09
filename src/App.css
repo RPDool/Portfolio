@@ -11,20 +11,23 @@ body, html, #root, .App {
 /* Layout container */
 .container {
   display: flex;
+  min-height: 100vh;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 30%;
-  min-width: 250px;
+  width: 32%;
+  max-width: 360px;
+  min-width: 260px;
   padding: 2rem;
   background-color: #2a2a2a;
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 50px;
+  box-sizing: border-box;
 }
 
 .sidebar-content {
@@ -82,9 +85,9 @@ body, html, #root, .App {
 
 /* Main Content */
 .content {
-  margin-left: 40%;
+  flex: 1;
   padding: 2rem;
-  width: 70%;
+  box-sizing: border-box;
 }
 
 .content section {
@@ -133,10 +136,52 @@ body, html, #root, .App {
 }
 
 .resume-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
   font-size: 1.2rem;
 }
 
 .resume-link a {
   color: #479593;
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 1.25rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-img {
+    width: 100%;
+    max-width: 320px;
+  }
 }

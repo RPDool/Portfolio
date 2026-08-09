@@ -16,6 +16,19 @@
       // },
     ];
 
+    const resumes = [
+      {
+        label: 'English Resume',
+        file: '/Resume_Robin_Dool.pdf',
+        download: 'Resume_Robin_Dool.pdf',
+      },
+      {
+        label: 'Dutch Resume',
+        file: '/CV_Robin_Dool.pdf',
+        download: 'CV_Robin_Dool.pdf',
+      }
+    ];
+
     return (
       <div className="container">
         {/* Left Sidebar */}
@@ -80,9 +93,15 @@
             </div>
           </section>
           <div className="resume-link">
-            <a href="/CV Robin Dool.pdf" download="Robin_Dool_Resume.pdf">
-              Resume →
-            </a>
+            {resumes.map((resume) => (
+              <a
+                key={resume.file}
+                href={process.env.PUBLIC_URL + resume.file}
+                download={resume.download}
+              >
+                {resume.label} →
+              </a>
+            ))}
           </div>
         </main>
       </div>
